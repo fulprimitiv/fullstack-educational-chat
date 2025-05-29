@@ -1,5 +1,6 @@
-const path = require('path');
+const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 module.exports = {
   entry: './src/index.jsx',
@@ -16,9 +17,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader'
-        }
+        use: 'babel-loader'
       },
       {
         test: /\.css$/,
@@ -29,6 +28,12 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html'
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: 'public/img', to: 'img' },
+        { from: 'public/svg', to: 'svg' }
+      ]
     })
   ],
   devServer: {
