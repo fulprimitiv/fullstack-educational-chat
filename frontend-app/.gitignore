@@ -1,16 +1,11 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
-/.pnp
-.pnp.js
+
+# production
+/dist
 
 # testing
 /coverage
-
-# production
-/build
-/dist
 
 # misc
 .DS_Store
@@ -18,58 +13,7 @@
 .env.development.local
 .env.test.local
 .env.production.local
-.env
 
-# logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-logs
-*.log
-
-# IDE specific files
-.idea/
-.vscode/
-*.sublime-project
-*.sublime-workspace
-.project
-.classpath
-.settings/
-*.swp
-*.swo
-
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# webpack
-.webpack/
-.cache/
-
-# TypeScript
-*.tsbuildinfo
-next-env.d.ts
-
-# Optional npm cache directory
-.npm
-
-# Optional eslint cache
-.eslintcache
-
-# Optional stylelint cache
-.stylelintcache
-
-# Yarn Integrity file
-.yarn-integrity
-
-# dotenv environment variable files
-.env
-.env.development.local
-.env.test.local
-.env.production.local
-.env.local
