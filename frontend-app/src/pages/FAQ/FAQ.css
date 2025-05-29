@@ -1,0 +1,153 @@
+/* Контейнер FAQ */
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Элемент FAQ */
+.faq-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Вопрос */
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  cursor: pointer;
+  background: #fff;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.faq-question:hover {
+  background: #f8f9fa;
+}
+
+.faq-question-text {
+  color: #2c3e50;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  flex: 1;
+  margin-right: 16px;
+}
+
+/* Стрелка */
+.faq-arrow {
+  color: #3498db;
+  font-size: 14px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.faq-arrow.open {
+  transform: rotate(180deg);
+}
+
+/* Ответ */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: #f8f9fa;
+}
+
+.faq-answer.open {
+  max-height: 200px; /* Достаточно для большинства ответов */
+}
+
+.faq-answer-content {
+  padding: 20px 24px;
+  color: #555;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22.4px; /* 160% */
+  border-top: 1px solid #e8e8e8;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .faq-question {
+    padding: 16px 20px;
+  }
+
+  .faq-question-text {
+    font-size: 15px;
+    line-height: 22px;
+    margin-right: 12px;
+  }
+
+  .faq-answer-content {
+    padding: 16px 20px;
+    font-size: 13px;
+    line-height: 20.8px;
+  }
+
+  .faq-answer.open {
+    max-height: 250px; /* Больше места на мобильных */
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-container {
+    gap: 12px;
+  }
+
+  .faq-question {
+    padding: 14px 16px;
+  }
+
+  .faq-question-text {
+    font-size: 14px;
+    line-height: 20px;
+    margin-right: 8px;
+  }
+
+  .faq-answer-content {
+    padding: 14px 16px;
+    font-size: 12px;
+    line-height: 19.2px;
+  }
+
+  .faq-arrow {
+    font-size: 12px;
+  }
+}
+
+/* Анимация появления */
+.faq-item {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Улучшенная анимация для длинных ответов */
+.faq-answer.open {
+  max-height: 300px;
+  transition: max-height 0.4s ease;
+}
