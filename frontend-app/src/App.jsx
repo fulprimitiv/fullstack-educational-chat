@@ -8,6 +8,7 @@ import Home from './pages/Home/Home';
 import Communities from './pages/Communities/Communities';
 import FAQ from './pages/FAQ/FAQ';
 import Contacts from './pages/Contacts/Contacts';
+import RTFMap from './pages/RTFMap/RTFMap';
 import FloatingChatButton from './components/common/FloatingChatButton/FloatingChatButton';
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
               <Route path="/communities" element={<Communities />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/contacts" element={<Contacts />} />
+              <Route path="/rtf-map" element={<RTFMap />} />
             </Routes>
           </div>
           {/* Кнопка чата скрывается при открытом мобильном меню */}
