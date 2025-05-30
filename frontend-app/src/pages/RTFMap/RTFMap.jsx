@@ -6,11 +6,11 @@ const RTFMap = () => {
 	const [currentFloor, setCurrentFloor] = useState(0);
 
 	const floors = [
-		{ number: 0, name: 'Цокольный этаж', image: '/img/zero-floor.png' },
-		{ number: 1, name: '1 этаж', image: '/img/first-floor.png' },
-		{ number: 2, name: '2 этаж', image: '/img/second-floor.png' },
-		{ number: 3, name: '3 этаж', image: '/img/third-floor.png' },
-		{ number: 4, name: '4 этаж', image: '/img/fourth-floor.png' }
+		{ number: 0, name: 'Цокольный этаж', image: '/svg/zero-floor.svg' },
+		{ number: 1, name: '1 этаж', image: '/svg/first-floor.svg' },
+		{ number: 2, name: '2 этаж', image: '/svg/second-floor.svg' },
+		{ number: 3, name: '3 этаж', image: '/svg/third-floor.svg' },
+		{ number: 4, name: '4 этаж', image: '/svg/fourth-floor.svg' }
 	];
 
 	const handleFloorChange = (floorNumber) => {
