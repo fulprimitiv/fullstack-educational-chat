@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store/store';
 import './styles/App.css';
@@ -42,7 +47,7 @@ function AppContent() {
         </Routes>
       </div>
       {/* Кнопка чата скрывается при открытом мобильном меню или на странице чата */}
-      {(shouldShowChatButton && !isMobileMenuOpen) && (
+      {shouldShowChatButton && !isMobileMenuOpen && (
         <FloatingChatButton onClick={handleChatToggle} />
       )}
     </div>

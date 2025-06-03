@@ -164,35 +164,35 @@
 }
 
 /* Состояния загрузки */
-.map-image[src*="placeholder"] {
+.map-image[src*='placeholder'] {
   opacity: 0.7;
   filter: grayscale(1);
 }
 
 /* Адаптивность */
-@media (max-width: 768px) {  
+@media (max-width: 768px) {
   .floor-navigation {
     padding: 15px;
   }
-  
+
   .floor-navigation-title {
     font-size: 16px;
   }
-  
+
   .floor-buttons {
     gap: 8px;
   }
-  
+
   .floor-btn {
     font-size: 12px;
     padding: 10px 16px;
     min-width: 100px;
   }
-  
+
   .map-container {
     height: 400px;
   }
-  
+
   .floor-info {
     position: static;
     margin: 15px;
@@ -204,21 +204,21 @@
   .map-container {
     height: 300px;
   }
-  
+
   .floor-btn {
     font-size: 11px;
     padding: 8px 12px;
     min-width: 80px;
   }
-  
+
   .map-instructions {
     padding: 15px;
   }
-  
+
   .map-instructions h3 {
     font-size: 14px;
   }
-  
+
   .map-instructions li {
     font-size: 13px;
   }
