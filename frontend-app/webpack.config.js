@@ -1,6 +1,9 @@
-const CopyPlugin = require('copy-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+require('dotenv').config(); // 🔑 Загрузка .env
+
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/index.jsx',
@@ -34,6 +37,11 @@ module.exports = {
         { from: 'public/img', to: 'img' },
         { from: 'public/svg', to: 'svg' }
       ]
+    }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
+      'process.env.REACT_APP_YANDEX_API_KEY': JSON.stringify(process.env.REACT_APP_YANDEX_API_KEY),
+      'process.env.REACT_APP_YANDEX_FOLDER_ID': JSON.stringify(process.env.REACT_APP_YANDEX_FOLDER_ID),
     })
   ],
   devServer: {
