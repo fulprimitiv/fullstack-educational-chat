@@ -2,8 +2,6 @@ import {
   FETCH_DATA_REQUEST,
   FETCH_DATA_SUCCESS,
   FETCH_DATA_FAILURE,
-  CLEAR_DATA,
-  SELECT_ROW,
 } from './types/actionTypes';
 
 // Начальное состояние
@@ -37,19 +35,6 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         error: action.payload,
-      };
-
-    case CLEAR_DATA:
-      return {
-        ...state,
-        data: [],
-        selectedRowId: null,
-      };
-
-    case SELECT_ROW:
-      return {
-        ...state,
-        selectedRowId: action.payload,
       };
 
     default:
