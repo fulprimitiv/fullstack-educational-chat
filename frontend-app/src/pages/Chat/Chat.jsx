@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './Chat.css';
+import { getAIResponse } from '../../services/aiService';
 
 const Chat = () => {
 	const [messages, setMessages] = useState([
@@ -37,43 +38,29 @@ const Chat = () => {
 		setInputValue('');
 		setIsTyping(true);
 
-		// Имитация ответа ИИ
-		setTimeout(() => {
-			const aiResponse = {
+		try {
+			const aiText = await getAIResponse(userMessage.content, messages);
+
+			const aiMessage = {
 				id: Date.now() + 1,
 				type: 'ai',
-				content: getAIResponse(userMessage.content),
+				content: aiText,
 				timestamp: new Date()
 			};
-			setMessages(prev => [...prev, aiResponse]);
-			setIsTyping(false);
-		}, 1500);
-	};
 
-	const getAIResponse = (userInput) => {
-		const input = userInput.toLowerCase();
+			setMessages(prev => [...prev, aiMessage]);
+		} catch (error) {
+			const errorMessage = {
+				id: Date.now() + 1,
+				type: 'ai',
+				content: '⚠️ Произошла ошибка при обращении к ИИ. Попробуйте позже или обратитесь в поддержку.',
+				timestamp: new Date()
+			};
 
-		if (input.includes('расписание') || input.includes('пары')) {
-			return 'Расписание занятий можно найти в личном кабинете студента или на сайте УрФУ. Также вы можете обратиться в деканат ИРИТ-РТФ для получения актуальной информации.';
+			setMessages(prev => [...prev, errorMessage]);
 		}
 
-		if (input.includes('общежитие') || input.includes('общага')) {
-			return 'Для получения места в общежитии нужно подать заявление в управление студгородком. Контакты: ул. 8 Марта 62, телефон: +7 (343) 111-11-11. Работают Пн-Пт 9:00-18:00.';
-		}
-
-		if (input.includes('библиотека')) {
-			return 'Научная библиотека УрФУ находится по адресу ул. Тургенева 4. Режим работы: Пн-Сб 9:00-21:00. Доступ к электронным ресурсам через личный кабинет.';
-		}
-
-		if (input.includes('стипендия')) {
-			return 'Информацию о стипендиях можно получить в деканате. Академическая стипендия назначается по результатам сессии, социальная - при предоставлении справок о доходах.';
-		}
-
-		if (input.includes('карта') || input.includes('здание')) {
-			return 'Интерактивная карта ИРИТ-РТФ доступна в разделе "Карта РТФ" на нашем сайте. Там вы найдете планы всех этажей с расположением аудиторий.';
-		}
-
-		return 'Спасибо за ваш вопрос! Я стараюсь изучить больше информации об УрФУ, чтобы лучше помогать студентам. Попробуйте переформулировать вопрос или обратитесь в деканат за более подробной консультацией.';
+		setIsTyping(false);
 	};
 
 	const handleKeyPress = (e) => {
