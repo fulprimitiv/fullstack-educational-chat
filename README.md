@@ -29,7 +29,8 @@
 
 ```
 fullstack-educational-chat/
-├── frontend-app/
+├── backend-api            # API сервер
+├── frontend-app/				# Фронтенд приложение
 │   ├── public/
 │   │   ├── img/           # Изображения и иконки
 │   │   ├── svg/           # SVG иконки
@@ -52,7 +53,7 @@ fullstack-educational-chat/
 └── README.md
 ```
 
-## Установка и запуск
+## Установка и запуск Frontend части приложения
 
 ### Установка зависимостей
 ```bash
