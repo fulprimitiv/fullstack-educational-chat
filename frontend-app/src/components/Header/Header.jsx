@@ -47,11 +47,6 @@ const Header = ({ onMobileMenuToggle }) => {
   return (
     <header className="app-header">
       <div className="header-container">
-        <div className="logo-container">
-          <Link to="/" className="logo-link" onClick={closeMobileMenu}>
-            <img src="/img/logo.png" alt="Logo" className="company-logo" />
-          </Link>
-        </div>
 
         {/* Десктопная навигация */}
         <nav className="nav-container desktop-nav">
@@ -88,11 +83,6 @@ const Header = ({ onMobileMenuToggle }) => {
             </Link>
           </div>
         </nav>
-
-        {/* Десктопная кнопка входа */}
-        <div className="auth-section desktop-auth">
-          <button className="login-btn">Войти</button>
-        </div>
 
         {/* Кнопка мобильного меню */}
         <button
@@ -146,11 +136,6 @@ const Header = ({ onMobileMenuToggle }) => {
                 FAQ
               </Link>
             </nav>
-            <div className="mobile-auth">
-              <button className="mobile-login-btn" onClick={closeMobileMenu}>
-                Войти
-              </button>
-            </div>
           </div>
         </div>
       </div>
