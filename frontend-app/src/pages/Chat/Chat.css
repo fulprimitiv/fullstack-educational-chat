@@ -172,7 +172,9 @@
 }
 
 @keyframes typing {
-  0%, 60%, 100% {
+  0%,
+  60%,
+  100% {
     transform: translateY(0);
     opacity: 0.5;
   }
@@ -293,45 +295,45 @@
   .chat-header {
     padding: 15px 20px;
   }
-  
+
   .chat-title {
     font-size: 18px;
   }
-  
+
   .quick-questions {
     padding: 15px 20px;
   }
-  
+
   .quick-questions-list {
     gap: 8px;
   }
-  
+
   .quick-question-btn {
     font-size: 12px;
     padding: 6px 12px;
   }
-  
+
   .messages-container {
     padding: 15px;
   }
-  
+
   .message-content {
     max-width: 85%;
   }
-  
+
   .chat-input-container {
     padding: 15px 20px;
   }
-  
+
   .chat-input-wrapper {
     padding: 6px 6px 6px 12px;
   }
-  
+
   .send-button {
     width: 36px;
     height: 36px;
   }
-  
+
   .send-button svg {
     width: 18px;
     height: 18px;
@@ -342,45 +344,45 @@
   .chat-header {
     padding: 12px 15px;
   }
-  
+
   .avatar-image {
     width: 40px;
     height: 40px;
   }
-  
+
   .chat-title {
     font-size: 16px;
   }
-  
+
   .chat-status {
     font-size: 13px;
   }
-  
+
   .quick-questions {
     padding: 12px 15px;
   }
-  
+
   .quick-questions-title {
     font-size: 14px;
   }
-  
+
   .messages-container {
     padding: 12px;
   }
-  
+
   .message-content {
     max-width: 90%;
     padding: 10px 14px;
   }
-  
+
   .message-text {
     font-size: 13px;
   }
-  
+
   .chat-input-container {
     padding: 12px 15px;
   }
-  
+
   .chat-input {
     font-size: 13px;
   }
