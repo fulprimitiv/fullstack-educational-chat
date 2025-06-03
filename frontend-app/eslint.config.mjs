@@ -61,9 +61,6 @@ export default [
 			react: {
 				version: 'detect'
 			}
-		},
-		"env": {
-			"browser": true
 		}
 	}
 ];
