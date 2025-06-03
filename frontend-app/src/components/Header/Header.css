@@ -73,31 +73,6 @@
   background: rgba(255, 255, 255, 0.25);
 }
 
-/* Десктопная кнопка входа */
-.auth-section {
-  flex-shrink: 0;
-  min-width: 100px;
-}
-
-.login-btn {
-  padding: 12px 24px;
-  background-color: #059669;
-  border: 2px solid #059669;
-  color: #fff;
-  font-family: 'Inter', sans-serif;
-  font-size: 19.2px;
-  font-weight: 400;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-}
-
-.login-btn:hover {
-  background-color: #047857;
-  border-color: #047857;
-}
-
 /* Кнопка мобильного меню */
 .mobile-menu-btn {
   display: none;
@@ -216,25 +191,6 @@
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.mobile-login-btn {
-  width: 100%;
-  padding: 15px 20px;
-  background-color: #059669;
-  border: 2px solid #059669;
-  color: #fff;
-  font-family: 'Inter', sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.mobile-login-btn:hover {
-  background-color: #047857;
-  border-color: #047857;
-}
-
 /* Адаптивность */
 @media (max-width: 1200px) {
   .header-container {
@@ -244,11 +200,6 @@
   .nav-item {
     font-size: 17px;
     padding: 8px 12px;
-  }
-
-  .login-btn {
-    font-size: 17px;
-    padding: 10px 20px;
   }
 }
 
@@ -273,8 +224,7 @@
   }
 
   /* Скрываем десктопную навигацию */
-  .desktop-nav,
-  .desktop-auth {
+  .desktop-nav {
     display: none;
   }
 
@@ -304,11 +254,6 @@
   }
 
   .mobile-nav-item {
-    font-size: 16px;
-    padding: 12px 15px;
-  }
-
-  .mobile-login-btn {
     font-size: 16px;
     padding: 12px 15px;
   }
