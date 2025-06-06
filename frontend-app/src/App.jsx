@@ -6,8 +6,8 @@ import {
   useLocation,
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { ThemeProvider } from 'next-themes';
 import store from './store/store';
-import './styles/App.css';
 import Header from './components/Header/Header';
 import Home from './pages/Home/Home';
 import Communities from './pages/Communities/Communities';
@@ -16,6 +16,7 @@ import Contacts from './pages/Contacts/Contacts';
 import RTFMap from './pages/RTFMap/RTFMap';
 import Chat from './pages/Chat/Chat';
 import FloatingChatButton from './components/common/FloatingChatButton/FloatingChatButton';
+import './styles/App.css';
 
 function AppContent() {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -46,7 +47,6 @@ function AppContent() {
           <Route path="/chat" element={<Chat />} />
         </Routes>
       </div>
-      {/* Кнопка чата скрывается при открытом мобильном меню или на странице чата */}
       {shouldShowChatButton && !isMobileMenuOpen && (
         <FloatingChatButton onClick={handleChatToggle} />
       )}
@@ -57,9 +57,17 @@ function AppContent() {
 function App() {
   return (
     <Provider store={store}>
-      <Router>
-        <AppContent />
-      </Router>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="light"
+        enableSystem={false}
+        themes={['light', 'dark']}
+        storageKey="app-theme"
+      >
+        <Router>
+          <AppContent />
+        </Router>
+      </ThemeProvider>
     </Provider>
   );
 }

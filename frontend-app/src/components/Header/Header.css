@@ -4,6 +4,13 @@
   z-index: 1000;
   background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Темная тема для хедера */
+.dark-mode .app-header {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .header-container {
@@ -19,7 +26,7 @@
 /* Логотип */
 .logo-container {
   flex-shrink: 0;
-  min-width: 50px;
+  min-width: 80px;
 }
 
 .logo-link {
@@ -28,7 +35,7 @@
 }
 
 .company-logo {
-  height: 50px;
+  width: 160px;
   object-fit: contain;
 }
 
@@ -38,7 +45,7 @@
   display: flex;
   justify-content: center;
   overflow: hidden;
-  margin: 0 20px;
+  margin: 0 70px 0 20px;
 }
 
 .nav-links {
@@ -71,6 +78,125 @@
 
 .nav-item.active:hover {
   background: rgba(255, 255, 255, 0.25);
+}
+
+/* Правая часть хедера */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+/* Переключатель темы */
+.theme-toggle-container {
+  display: flex;
+  align-items: center;
+}
+
+.theme-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.theme-toggle-wrapper:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.theme-icon {
+  font-size: 16px;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.theme-icon.active {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.theme-toggle {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 22px;
+}
+
+.theme-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background: #fff;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle input:checked + .slider {
+  background: rgba(59, 130, 246, 0.4);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.theme-toggle input:checked + .slider:before {
+  transform: translateX(22px);
+  background: #3b82f6;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.theme-toggle:hover .slider {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.theme-toggle input:checked:hover + .slider {
+  background: rgba(59, 130, 246, 0.5);
+}
+
+/* Темная тема для переключателя */
+.dark-mode .theme-toggle-wrapper {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.dark-mode .slider {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .theme-toggle input:checked + .slider {
+  background: rgba(251, 191, 36, 0.4);
+  border-color: rgba(251, 191, 36, 0.3);
+}
+
+.dark-mode .theme-toggle input:checked + .slider:before {
+  background: #fbbf24;
+  box-shadow: 0 2px 8px rgba(251, 191, 36, 0.3);
 }
 
 /* Кнопка мобильного меню */
@@ -151,6 +277,10 @@
   justify-content: space-between;
 }
 
+.dark-mode .mobile-menu-content {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
 .mobile-menu.open .mobile-menu-content {
   transform: translateX(0);
 }
@@ -184,12 +314,60 @@
   border-color: rgba(255, 255, 255, 0.3);
 }
 
-/* Мобильная кнопка входа */
-.mobile-auth {
+/* Мобильный переключатель темы */
+.mobile-theme-toggle {
   margin-top: 30px;
   padding-top: 30px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
 }
+
+.mobile-theme-toggle .theme-toggle-wrapper {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px 15px;
+  border-radius: 25px;
+}
+
+.theme-label {
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.theme-toggle-container.desktop-theme {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .theme-toggle-container.desktop-theme {
+    display: none !important;
+  }
+  
+  .desktop-theme {
+    display: none !important;
+  }
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .header-right {
+    display: none; 
+  }
+}
+
 
 /* Адаптивность */
 @media (max-width: 1200px) {
@@ -216,6 +394,29 @@
   .nav-links {
     gap: 15px;
   }
+
+  .theme-toggle-wrapper {
+    gap: 8px;
+    padding: 6px 10px;
+  }
+
+  .theme-icon {
+    font-size: 14px;
+  }
+
+  .theme-toggle {
+    width: 40px;
+    height: 20px;
+  }
+
+  .slider:before {
+    height: 14px;
+    width: 14px;
+  }
+
+  .theme-toggle input:checked + .slider:before {
+    transform: translateX(20px);
+  }
 }
 
 @media (max-width: 768px) {
@@ -223,18 +424,24 @@
     padding: 0 20px;
   }
 
-  /* Скрываем десктопную навигацию */
   .desktop-nav {
     display: none;
   }
 
-  /* Показываем мобильную кнопку */
   .mobile-menu-btn {
     display: flex;
   }
 
   .logo-container {
     flex: 1;
+  }
+
+  .header-right {
+    gap: 15px;
+  }
+
+  .theme-toggle-container {
+    display: flex;
   }
 }
 
@@ -245,7 +452,7 @@
   }
 
   .company-logo {
-    height: 40px;
+    height: 60px;
   }
 
   .mobile-menu-content {
@@ -257,9 +464,29 @@
     font-size: 16px;
     padding: 12px 15px;
   }
+
+  .theme-toggle-wrapper {
+    gap: 6px;
+    padding: 5px 8px;
+  }
+
+  .theme-icon {
+    font-size: 12px;
+  }
+
+  .theme-toggle {
+    width: 36px;
+    height: 18px;
+  }
+
+  .slider:before {
+    height: 12px;
+    width: 12px;
+  }
+
+  .theme-toggle input:checked + .slider:before {
+    transform: translateX(18px);
+  }
 }
 
-/* Предотвращение скролла при открытом меню */
-body.mobile-menu-open {
-  overflow: hidden;
-}
+
