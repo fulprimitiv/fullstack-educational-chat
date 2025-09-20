@@ -29,27 +29,27 @@
 
 ```
 fullstack-educational-chat/
-├── backend-api            # API сервер
-├── frontend-app/				# Фронтенд приложение
+├── backend-api               # API сервер
+├── frontend-app/             # Фронтенд приложение
 │   ├── public/
-│   │   ├── img/           # Изображения и иконки
-│   │   ├── svg/           # SVG иконки
-│   │   └── index.html     # Основной HTML файл
+│   │   ├── img/              # Изображения и иконки
+│   │   ├── svg/              # SVG иконки
+│   │   └── index.html        # Основной HTML файл
 │   ├── src/
-│   │   ├── components/    # Переиспользуемые компоненты
-│   │   ├── pages/         # Страницы приложения
-│   │   │   ├── Chat/      # Страница чата с ИИ
-│   │   │   ├── Communities/ # Страница сообществ
-│   │   │   ├── Contacts/  # Страница контактов
-│   │   │   ├── FAQ/       # Страница FAQ
-│   │   │   ├── Home/      # Главная страница
-│   │   │   └── RTFMap/    # Интерактивная карта
-│   │   ├── store/         # Redux store
-│   │   ├── services/      # API сервисы
-│   │   ├── styles/        # Глобальные стили
-│   │   └── App.jsx        # Главный компонент
-│   ├── webpack.config.js  # Конфигурация Webpack
-│   └── package.json       # Зависимости проекта
+│   │   ├── components/       # Переиспользуемые компоненты
+│   │   ├── pages/            # Страницы приложения
+│   │   │   ├── Chat/         # Страница чата с ИИ
+│   │   │   ├── Communities/  # Страница сообществ
+│   │   │   ├── Contacts/     # Страница контактов
+│   │   │   ├── FAQ/          # Страница FAQ
+│   │   │   ├── Home/         # Главная страница
+│   │   │   └── RTFMap/       # Интерактивная карта
+│   │   ├── store/            # Redux store
+│   │   ├── services/         # API сервисы
+│   │   ├── styles/           # Глобальные стили
+│   │   └── App.jsx           # Главный компонент
+│   ├── webpack.config.js     # Конфигурация Webpack
+│   └── package.json          # Зависимости проекта
 └── README.md
 ```
 
